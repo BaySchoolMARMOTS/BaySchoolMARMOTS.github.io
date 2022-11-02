@@ -55,6 +55,9 @@ this thing was made with so much jank anyway-->
     <br>
     <br>
 
+    <h4>Advanced Settings</h4>
+    <button onclick="toggle_special_only()" id="toggle_special">Update ONLY special schedule</button>
+
     <h4>Debugging:</h4>
     <p>
       The following things will cause problems with the code:
@@ -190,7 +193,7 @@ this thing was made with so much jank anyway-->
 
 
       //adding functionality in the future to merge the data of multiple calendars
-      const reset = true
+      var window.only_special_schedule = false
 
       //stuff which we're going to write to the JSON files (named according to which file they will write to)
       var schedule = {}
@@ -507,6 +510,17 @@ this thing was made with so much jank anyway-->
         function setCalendarID() {
           //prompt the user to pastre in the ID of their Calendar
           calendarId = prompt("Paste the Calendar ID here: ")
+        }
+
+        function toggle_special_only() {
+          if (window.only_special_schedule) {
+            window.only_special_schedule = false
+            document.getElementById("toggle_special").innerText = "Update ONLY special schedule"
+          }
+          else {
+            window.only_special_schedule = true
+            document.getElementById("toggle_special").innerText = "Update ALL"
+          }
         }
 
     </script>
