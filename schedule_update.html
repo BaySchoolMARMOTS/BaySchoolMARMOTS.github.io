@@ -348,6 +348,7 @@ this thing was made with so much jank anyway-->
 
 
             //since they kinda just leave it blank when Summer Break happens, we have to detect that
+            //this will probably go over, but should be overwritten if this program is run before the next school year
             for (let i=0; i<(Object.keys(all_events).length-1); ++i) {
               if (Math.abs(moment(Object.keys(all_events)[i]).diff(moment(Object.keys(all_events)[i+1]), "days")) > 3) {
                 breaks["SUMMER BREAK"] = [moment(Object.keys(all_events)[i]).add(1, "days").format("YYYY/MM/DD"), moment(Object.keys(all_events)[i+1]).add(-1, "days").format("YYYY/MM/DD")]
