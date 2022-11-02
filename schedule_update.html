@@ -446,7 +446,7 @@ this thing was made with so much jank anyway-->
                         immersives[immersive_name + ' Schedule'] = {}
                       }
                       if (format_summary(e.summary)) {
-                        immersives[immersive_name + ' Schedule'][format_summary(e.summary)] = [[moment(e.start.dateTime).format('H'), moment(e.start.dateTime).format('m')], [moment(e.end.dateTime).format('H'), moment(e.end.dateTime).format('m')]]
+                        immersives[immersive_name + ' Schedule'][format_summary(e.summary)] = [[Number(moment(e.start.dateTime).format('H')), Number(moment(e.start.dateTime).format('m'))], [Number(moment(e.end.dateTime).format('H')), Number(moment(e.end.dateTime).format('m'))]]
                       }
                     }
                     if (format_summary(e.summary)) {
