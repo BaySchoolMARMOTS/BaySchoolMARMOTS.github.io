@@ -140,7 +140,7 @@ this thing was made with so much jank anyway-->
           await git.add({fs, dir, filepath: 'immersives.json'})
           await git.add({fs, dir, filepath: 'breaks.json'})
         }
-        
+
         //commit (don't worry about the shasum, it doesn't really matter)
         let sha = await git.commit({
           fs,
@@ -196,7 +196,7 @@ this thing was made with so much jank anyway-->
 
 
       //adding functionality in the future to merge the data of multiple calendars
-      var window.only_special_schedule = false
+      window.only_special_schedule = false
 
       //stuff which we're going to write to the JSON files (named according to which file they will write to)
       var schedule = {}
