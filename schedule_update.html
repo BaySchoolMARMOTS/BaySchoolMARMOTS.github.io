@@ -56,7 +56,9 @@ this thing was made with so much jank anyway-->
     <br>
 
     <h4>Advanced Settings</h4>
-    <button onclick="toggle_special_only()" id="toggle_special">Update ONLY special schedule</button>
+    <!--<button onclick="toggle_special_only()" id="toggle_special">Update ONLY special schedule</button> -->
+
+    <input type="checkbox" id="toggle_special">Update ONLY special schedule</input>
 
     <h4>Debugging:</h4>
     <p>
@@ -135,10 +137,11 @@ this thing was made with so much jank anyway-->
         //flag the files we modified to get ready to commit
         await git.add({fs, dir, filepath: 'special_schedule.json'})
 
-        if (!window.only_special_schedule) {
+        if (document.getElementById("toggle_special").checked == false) {
           await git.add({fs, dir, filepath: 'schedule.json'})
           await git.add({fs, dir, filepath: 'immersives.json'})
           await git.add({fs, dir, filepath: 'breaks.json'})
+          console.log("updating entire schedule")
         }
 
         //commit (don't worry about the shasum, it doesn't really matter)
@@ -196,7 +199,7 @@ this thing was made with so much jank anyway-->
 
 
       //adding functionality in the future to merge the data of multiple calendars
-      window.only_special_schedule = false
+//      window.only_special_schedule = false
 
       //stuff which we're going to write to the JSON files (named according to which file they will write to)
       var schedule = {}
@@ -516,6 +519,7 @@ this thing was made with so much jank anyway-->
           calendarId = prompt("Paste the Calendar ID here: ")
         }
 
+/*
         function toggle_special_only() {
           if (window.only_special_schedule) {
             window.only_special_schedule = false
@@ -526,7 +530,7 @@ this thing was made with so much jank anyway-->
             document.getElementById("toggle_special").innerText = "Update ALL"
           }
         }
-
+*/
     </script>
 <!--    <script async defer src="https://apis.google.com/js/client:plusone.js" type="application/javascript" onload="gapiLoaded()"></script> -->
 <!-- scripts for google APIs-->
