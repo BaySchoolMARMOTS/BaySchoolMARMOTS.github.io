@@ -72,11 +72,13 @@ this thing was made with so much jank anyway-->
         <li>Two different breaks or immersives with the same name</li>
         <li>Lunchtime ending before 11:00 AM or after 2:00PM</li>
         <li>The calendar provided doesn't use the same formatting as MyBay (classes have the block name in parenthesis, there is an all-day event labeled "SPECIAL SCHEDULE" on days which the schedule is different, etc.)</li>
-        <li>The Github API token has expired (to fix this, log into the bayclock github account, go to <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">access token settings</a>
-          ; if you don't see any active tokens make a new one with access to the correct repository)</li>
+        <li>The Github API token has expired (to fix this, log into the MARMOTs github account, go to <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/creating-a-personal-access-token">access token settings</a>
+          ; if you don't see any active tokens make a new one with access to the correct repository).</li>
       </ul>
     </p>
-    <p>If weird things are showing up in the JSON schedule files, like </p>
+    <p>If weird things are showing up in the JSON schedule files, like sports events for a specific team or grade-specific events,
+    check to make sure that you input the ID of the calendar from MyBay containing ONLY the class schedule, as described above.
+    There are multiple other calendars from MyBay which look quite similar but contain a bunch of things which probably don't need to be on Bayclock</p>
     <p>If something doesn't work, or the prompt to give the github API token disappears, it helps to reload the page before trying again </p>
     <p>Due to the way the crappy Isomorphic-Git library works, there will always be a single 401 error thrown (it doesn't affect
       the functionality of the code); if you see more red errors in the console, this could indicate a problem.</p>
@@ -234,6 +236,10 @@ this thing was made with so much jank anyway-->
 
       //this will be set by user input
       var calendarId = ""
+
+      //Easter-egg haikus
+      //Hidden deep inside the code
+      //no one's gonna see
 
 
 //    the source for the protocol with which to grab GCal Data
@@ -473,6 +479,11 @@ this thing was made with so much jank anyway-->
             window.upload(schedule, special_schedule, immersives, breaks)
           }
         }
+
+//I don't like haikus
+//you cannot complete a sent-
+//there's not enought syl-
+
 
         function format_summary(summary) {
           //the events are all gonna be named according to the classes you take; this is supposed to find the actual names of the blocks which are applicable to everyone (A, B, etc.)
