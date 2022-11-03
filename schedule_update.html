@@ -9,7 +9,8 @@
 this thing was made with so much jank anyway-->
     <h4>Bayclock Schedule Updater</h4>
 
-    <p>This is a wizard meant to update the Bayclock schedule. This process will probably need to be performed at the beginning of each school year (BEFORE school begins)</p>
+    <p>This is a wizard meant to update the Bayclock schedule. This process will probably need to be performed at the beginning of each school year (BEFORE school begins), as well
+    as whenever the school updates their calendar.</p>
 
     <br>
 
@@ -25,6 +26,10 @@ this thing was made with so much jank anyway-->
       Now open Google Calendar. In the left-hand bar, scroll down until you see a section labeled "Other Calendars". Press the "+" button next to it, and select "From URL".
       Paste the url you just copied into the box, then press "Add Calendar". You may have to wait a bit for the events to appear, but you should see
       your classes appear as events on your calendar.
+    </p>
+    <p>
+      It may be worth it to set up <a href="https://support.google.com/calendar/answer/37242?hl=en&co=GENIE.Platform%3DDesktop&oco=0" target="_blank">email notifications</a> (for this specific calendar) to alert
+      you if the school decides to change the schedule.
     </p>
 
     <br>
@@ -71,6 +76,7 @@ this thing was made with so much jank anyway-->
           ; if you don't see any active tokens make a new one with access to the correct repository)</li>
       </ul>
     </p>
+    <p>If weird things are showing up in the JSON schedule files, like </p>
     <p>If something doesn't work, or the prompt to give the github API token disappears, it helps to reload the page before trying again </p>
     <p>Due to the way the crappy Isomorphic-Git library works, there will always be a single 401 error thrown (it doesn't affect
       the functionality of the code); if you see more red errors in the console, this could indicate a problem.</p>
@@ -141,7 +147,6 @@ this thing was made with so much jank anyway-->
           await git.add({fs, dir, filepath: 'schedule.json'})
           await git.add({fs, dir, filepath: 'immersives.json'})
           await git.add({fs, dir, filepath: 'breaks.json'})
-          console.log("updating entire schedule")
         }
 
         //commit (don't worry about the shasum, it doesn't really matter)
